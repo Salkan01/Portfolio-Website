@@ -35,6 +35,27 @@ function App() {
           </div>
         </div>
       </section>
+
+      <section id="about" className="about">
+        <h2>About Me</h2>
+        <p>
+          Hi, I'm Salah Eddin Kanaya — a passionate programmer studying
+          <em>Innovative Programming</em> at Linköping University. I've built
+          projects with technologies like Java, C#, C++, JavaScript, TypeScript
+          and Python using frameworks such as React, Node.js and .NET. I enjoy
+          solving problems with clean, scalable code and working with teams via
+          GitLab and testing frameworks.
+        </p>
+        <p>Let me show you what I can do.</p>
+      </section>
+
+      <section id="contact" className="contact">
+        <h2>Contact</h2>
+        <p>
+          <a href="mailto:me@example.com">me@example.com</a>
+        </p>
+      </section>
+
     </div>
   );
 }

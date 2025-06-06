@@ -22,8 +22,8 @@
 .nav-links a {
   color: #61dafb;
   text-decoration: none;
-}
 
+}
 .hero {
   padding: 4rem 1rem;
 }
@@ -60,4 +60,16 @@
 .project-card img {
   width: 100%;
   border-radius: 4px;
+}
+
+.about {
+  padding: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.contact {
+  padding: 2rem;
 }
