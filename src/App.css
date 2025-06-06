@@ -31,7 +31,6 @@
 .tagline {
   color: #555;
 }
-
 .cta {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
@@ -101,4 +100,8 @@
 .chatbot input {
   width: 100%;
   padding: 0.5rem;
+}
+
+.contact {
+  padding: 2rem;
 }

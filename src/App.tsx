@@ -77,6 +77,9 @@ const translations: Record<Lang, Record<string, string>> = {
 const movieImg = "https://via.placeholder.com/300x200.png?text=Movie+Ranking";
 const birthdayImg = "https://via.placeholder.com/300x200.png?text=Birthday+Invite";
 
+const movieImg = "https://via.placeholder.com/300x200.png?text=Movie+Ranking";
+const birthdayImg = "https://via.placeholder.com/300x200.png?text=Birthday+Invite";
+
 function App() {
   const [lang, setLang] = useState<Lang>('en');
   const t = (key: string) => translations[lang][key];
