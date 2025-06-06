@@ -22,8 +22,8 @@
 .nav-links a {
   color: #61dafb;
   text-decoration: none;
-
 }
+
 .hero {
   padding: 4rem 1rem;
 }
@@ -31,7 +31,6 @@
 .tagline {
   color: #555;
 }
-
 .cta {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
@@ -68,6 +67,39 @@
   margin: 0 auto;
   text-align: left;
   line-height: 1.6;
+}
+
+.contact {
+  padding: 2rem;
+}
+
+.chatbot {
+  max-width: 400px;
+  margin: 2rem auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.chat-window {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 0.5rem;
+}
+
+.chat-window .bot {
+  text-align: left;
+  color: #20232a;
+}
+
+.chat-window .user {
+  text-align: right;
+  color: #61dafb;
+}
+
+.chatbot input {
+  width: 100%;
+  padding: 0.5rem;
 }
 
 .contact {
