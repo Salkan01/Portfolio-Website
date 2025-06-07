@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import ChatBot from './ChatBot';
 import styles from './App.module.css';
 
@@ -98,6 +99,7 @@ function App() {
     setLang(newLang);
     localStorage.setItem('lang', newLang);
   };
+
   const t = (key: string) => translations[lang][key];
   return (
     <div>
@@ -108,6 +110,7 @@ function App() {
           <li className={styles.navItem}><a href="#about">{t('navAbout')}</a></li>
           <li className={styles.navItem}><a href="#contact">{t('navContact')}</a></li>
         </ul>
+
         <select value={lang} onChange={handleLangChange}>
           <option value="en">English</option>
           <option value="sv">Svenska</option>
