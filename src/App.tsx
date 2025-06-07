@@ -9,28 +9,9 @@ import ContactSection from './components/ContactSection';
 import ChatBot from './components/ChatBot';
 import { translations, Lang } from './i18n/translations';
 
+
+import 'react-toastify/dist/ReactToastify.css'
 function App() {
-  const [lang, setLang] = useState<Lang>('en');
-
-  useEffect(() => {
-    const savedLang = localStorage.getItem('lang') as Lang | null;
-    if (savedLang) {
-      setLang(savedLang);
-    } else {
-      const browser = (navigator.language || (navigator.languages && navigator.languages[0]) || 'en').split('-')[0];
-      const supported: Lang[] = ['en', 'sv', 'ar'];
-      const initial = supported.includes(browser as Lang) ? (browser as Lang) : 'en';
-      setLang(initial);
-      localStorage.setItem('lang', initial);
-    }
-  }, []);
-
-  const handleLangChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const newLang = e.target.value as Lang;
-    setLang(newLang);
-    localStorage.setItem('lang', newLang);
-  };
-  const t = (key: string) => translations[lang][key];
   return (
     <div>
       <Navbar t={t} lang={lang} onLangChange={handleLangChange} />
@@ -44,4 +25,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
