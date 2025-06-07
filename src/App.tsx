@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './App.css';
 import ChatBot from './ChatBot';
 
 type Lang = 'en' | 'sv' | 'ar';
