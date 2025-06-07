@@ -4,9 +4,14 @@ import './styles/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
+// Create root using React 18's API
+const root = ReactDOM.createRoot(document.getElementById('root')!);
+
+root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-)
+  </React.StrictMode>
+);
+
+// Optional: Start measuring performance
+reportWebVitals();

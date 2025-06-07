@@ -5,6 +5,7 @@ import ReCAPTCHA from 'react-google-recaptcha'
 import { useEffect, useState } from 'react'
 import validator from 'validator'
 
+
 export function Form() {
   const [state, handleSubmit] = useForm('xknkpqry')
   const [validEmail, setValidEmail] = useState(false)
@@ -20,7 +21,7 @@ export function Form() {
   useEffect(() => {
     if (state.succeeded) {
       toast.success('Email successfully sent!', {
-        position: toast.POSITION.BOTTOM_LEFT,
+          position: "bottom-left",
         pauseOnFocusLoss: false,
         closeOnClick: true,
         hideProgressBar: false,
