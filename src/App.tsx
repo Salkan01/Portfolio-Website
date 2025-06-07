@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ChatBot from './ChatBot';
+import './App.css';
 
 type Lang = 'en' | 'sv' | 'ar';
 
@@ -80,60 +81,53 @@ function App() {
   const [lang, setLang] = useState<Lang>('en');
   const t = (key: string) => translations[lang][key];
   return (
-    <div className="pt-16 text-center font-sans">
-      <nav className="fixed top-0 inset-x-0 bg-gray-900 text-white flex items-center justify-between px-4 py-3">
-        <div className="font-bold">Salaheddin Kanaya</div>
-        <ul className="hidden sm:flex space-x-4">
-          <li><a className="hover:text-blue-300" href="#projects">{t('navProjects')}</a></li>
-          <li><a className="hover:text-blue-300" href="#about">{t('navAbout')}</a></li>
-          <li><a className="hover:text-blue-300" href="#contact">{t('navContact')}</a></li>
+    <div>
+      <nav className="navbar">
+        <div>Salaheddin Kanaya</div>
+        <ul>
+          <li><a href="#projects">{t('navProjects')}</a></li>
+          <li><a href="#about">{t('navAbout')}</a></li>
+          <li><a href="#contact">{t('navContact')}</a></li>
         </ul>
-        <select
-          className="bg-gray-800 border border-gray-700 rounded px-2 py-1 text-sm focus:outline-none"
-          value={lang}
-          onChange={e => setLang(e.target.value as Lang)}
-        >
+        <select value={lang} onChange={e => setLang(e.target.value as Lang)}>
           <option value="en">English</option>
           <option value="sv">Svenska</option>
           <option value="ar">العربية</option>
         </select>
       </nav>
 
-      <header className="flex flex-col items-center justify-center text-center py-24 bg-gray-100 px-4">
-        <h1 className="text-4xl sm:text-5xl font-bold mb-4">{t('heroHeading')}</h1>
-        <p className="text-lg text-gray-700 mb-6">{t('tagline')}</p>
-        <a
-          className="px-6 py-3 bg-blue-500 text-white rounded shadow hover:bg-blue-600"
-          href="#projects"
-        >
+      <header className="hero">
+        <h1>{t('heroHeading')}</h1>
+        <p>{t('tagline')}</p>
+        <a className="cta" href="#projects">
           {t('cta')}
         </a>
       </header>
 
-      <section id="projects" className="py-12 bg-white">
-        <h2 className="text-3xl font-bold mb-8">{t('featured')}</h2>
-        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 px-4">
-          <div className="bg-gray-100 rounded shadow hover:shadow-lg overflow-hidden">
-            <img className="w-full" src={movieImg} alt="Movie Ranking" />
-            <h3 className="p-4 font-semibold">{t('movie')}</h3>
+      <section id="projects" className="section">
+        <h2>{t('featured')}</h2>
+        <div className="project-grid">
+          <div className="project-card">
+            <img src={movieImg} alt="Movie Ranking" />
+            <h3>{t('movie')}</h3>
           </div>
-          <div className="bg-gray-100 rounded shadow hover:shadow-lg overflow-hidden">
-            <img className="w-full" src={birthdayImg} alt="Birthday Invite" />
-            <h3 className="p-4 font-semibold">{t('birthday')}</h3>
+          <div className="project-card">
+            <img src={birthdayImg} alt="Birthday Invite" />
+            <h3>{t('birthday')}</h3>
           </div>
         </div>
       </section>
 
-      <section id="about" className="py-12 px-4 max-w-3xl mx-auto text-left space-y-4">
-        <h2 className="text-3xl font-bold">{t('aboutHeading')}</h2>
+      <section id="about" className="section">
+        <h2>{t('aboutHeading')}</h2>
         <p>{t('aboutText')}</p>
         <p>Let me show you what I can do.</p>
       </section>
 
-      <section id="contact" className="py-12 text-center space-y-2">
-        <h2 className="text-3xl font-bold">{t('contactHeading')}</h2>
+      <section id="contact" className="section">
+        <h2>{t('contactHeading')}</h2>
         <p>
-          <a className="text-blue-600 hover:underline" href={`mailto:${t('contactEmail')}`}>{t('contactEmail')}</a>
+          <a href={`mailto:${t('contactEmail')}`}>{t('contactEmail')}</a>
         </p>
       </section>
 
