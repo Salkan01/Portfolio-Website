@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ChatBot from './ChatBot';
 import styles from './App.module.css';
 
@@ -79,6 +79,25 @@ const birthdayImg = "https://via.placeholder.com/300x200.png?text=Birthday+Invit
 
 function App() {
   const [lang, setLang] = useState<Lang>('en');
+
+  useEffect(() => {
+    const savedLang = localStorage.getItem('lang') as Lang | null;
+    if (savedLang) {
+      setLang(savedLang);
+    } else {
+      const browser = (navigator.language || (navigator.languages && navigator.languages[0]) || 'en').split('-')[0];
+      const supported: Lang[] = ['en', 'sv', 'ar'];
+      const initial = supported.includes(browser as Lang) ? (browser as Lang) : 'en';
+      setLang(initial);
+      localStorage.setItem('lang', initial);
+    }
+  }, []);
+
+  const handleLangChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newLang = e.target.value as Lang;
+    setLang(newLang);
+    localStorage.setItem('lang', newLang);
+  };
   const t = (key: string) => translations[lang][key];
   return (
     <div>
@@ -89,7 +108,7 @@ function App() {
           <li className={styles.navItem}><a href="#about">{t('navAbout')}</a></li>
           <li className={styles.navItem}><a href="#contact">{t('navContact')}</a></li>
         </ul>
-        <select value={lang} onChange={e => setLang(e.target.value as Lang)}>
+        <select value={lang} onChange={handleLangChange}>
           <option value="en">English</option>
           <option value="sv">Svenska</option>
           <option value="ar">العربية</option>
