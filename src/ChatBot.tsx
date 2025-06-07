@@ -50,14 +50,30 @@ const ChatBot: React.FC<Props> = ({ t }) => {
   };
 
   return (
-    <div className="chatbot">
-      <div className="chat-window">
+    <div className="max-w-md mx-auto my-8 p-4 border rounded">
+      <div className="mb-4 space-y-2 max-h-52 overflow-y-auto">
         {messages.map((msg, idx) => (
-          <div key={idx} className={msg.from}>{msg.text}</div>
+          <div
+            key={idx}
+            className={msg.from === 'bot' ? 'text-left text-gray-800' : 'text-right text-blue-600'}
+          >
+            {msg.text}
+          </div>
         ))}
       </div>
-      <form onSubmit={e => { e.preventDefault(); sendMessage(input); setInput(''); }}>
-        <input value={input} onChange={e => setInput(e.target.value)} placeholder={t('chat_placeholder')} />
+      <form
+        onSubmit={e => {
+          e.preventDefault();
+          sendMessage(input);
+          setInput('');
+        }}
+      >
+        <input
+          className="w-full border rounded p-2"
+          value={input}
+          onChange={e => setInput(e.target.value)}
+          placeholder={t('chat_placeholder')}
+        />
       </form>
     </div>
   );
