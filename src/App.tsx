@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ProjectsSection from './components/ProjectsSection';
 import AboutSection from './components/AboutSection';
+import SkillsSection from './components/SkillsSection';
 import ContactSection from './components/ContactSection';
 import ChatBot from './components/ChatBot';
 import { translations, Lang } from './i18n/translations';
@@ -36,6 +37,7 @@ function App() {
       <Hero t={t} />
       <ProjectsSection t={t} />
       <AboutSection t={t} />
+      <SkillsSection t={t} />
       <ContactSection t={t} />
       <ChatBot t={t} />
     </div>
