@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ChatBot from './ChatBot';
-import './App.css';
+import styles from './App.module.css';
 
 type Lang = 'en' | 'sv' | 'ar';
 
@@ -82,12 +82,12 @@ function App() {
   const t = (key: string) => translations[lang][key];
   return (
     <div>
-      <nav className="navbar">
+      <nav className={styles.navbar}>
         <div>Salaheddin Kanaya</div>
-        <ul>
-          <li><a href="#projects">{t('navProjects')}</a></li>
-          <li><a href="#about">{t('navAbout')}</a></li>
-          <li><a href="#contact">{t('navContact')}</a></li>
+        <ul className={styles.navList}>
+          <li className={styles.navItem}><a href="#projects">{t('navProjects')}</a></li>
+          <li className={styles.navItem}><a href="#about">{t('navAbout')}</a></li>
+          <li className={styles.navItem}><a href="#contact">{t('navContact')}</a></li>
         </ul>
         <select value={lang} onChange={e => setLang(e.target.value as Lang)}>
           <option value="en">English</option>
@@ -96,35 +96,35 @@ function App() {
         </select>
       </nav>
 
-      <header className="hero">
+      <header className={styles.hero}>
         <h1>{t('heroHeading')}</h1>
         <p>{t('tagline')}</p>
-        <a className="cta" href="#projects">
+        <a className={styles.cta} href="#projects">
           {t('cta')}
         </a>
       </header>
 
-      <section id="projects" className="section">
+      <section id="projects" className={styles.section}>
         <h2>{t('featured')}</h2>
-        <div className="project-grid">
-          <div className="project-card">
+        <div className={styles.projectGrid}>
+          <div className={styles.projectCard}>
             <img src={movieImg} alt="Movie Ranking" />
             <h3>{t('movie')}</h3>
           </div>
-          <div className="project-card">
+          <div className={styles.projectCard}>
             <img src={birthdayImg} alt="Birthday Invite" />
             <h3>{t('birthday')}</h3>
           </div>
         </div>
       </section>
 
-      <section id="about" className="section">
+      <section id="about" className={styles.section}>
         <h2>{t('aboutHeading')}</h2>
         <p>{t('aboutText')}</p>
         <p>Let me show you what I can do.</p>
       </section>
 
-      <section id="contact" className="section">
+      <section id="contact" className={styles.section}>
         <h2>{t('contactHeading')}</h2>
         <p>
           <a href={`mailto:${t('contactEmail')}`}>{t('contactEmail')}</a>
