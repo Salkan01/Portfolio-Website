@@ -1,22 +1,28 @@
-import React from 'react'
-// import { useEffect } from 'react'
-import { Footer } from './components/Footer/Footer'
-import { Header } from './components/Header/Header'
-import { Main } from './components/Main/Main'
-import { GlobalStyle } from './styles/global'
-import { Analytics } from "@vercel/analytics/react"
+import React, { useState, useEffect } from 'react';
+import styles from './styles/App.module.css';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import ProjectsSection from './components/ProjectsSection';
+import AboutSection from './components/AboutSection';
+import SkillsSection from './components/SkillsSection';
+import ContactSection from './components/ContactSection';
+import ChatBot from './components/ChatBot';
+import { translations, Lang } from './i18n/translations';
+
 
 import 'react-toastify/dist/ReactToastify.css'
 function App() {
   return (
-    <>
-      <GlobalStyle></GlobalStyle>
-      <Header></Header>
-      <Main></Main>
-      <Analytics />
-      <Footer></Footer>
-    </>
-  )
+    <div>
+      <Navbar t={t} lang={lang} onLangChange={handleLangChange} />
+      <Hero t={t} />
+      <ProjectsSection t={t} />
+      <AboutSection t={t} />
+      <SkillsSection t={t} />
+      <ContactSection t={t} />
+      <ChatBot t={t} />
+    </div>
+  );
 }
 
 export default App

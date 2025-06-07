@@ -4,6 +4,6 @@ import App from './App';
 
 test('renders hero heading', () => {
   render(<App />);
-  const heading = screen.getByText(/welcome to my portfolio/i);
+  const heading = screen.getByText(/Frontend Developer & Aspiring Full-Stack Engineer/i);
   expect(heading).toBeInTheDocument();
 });

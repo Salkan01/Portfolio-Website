@@ -9,6 +9,10 @@ interface ContactProps {
 const ContactSection: React.FC<ContactProps> = ({ t }) => (
   <section id="contact" className={styles.section}>
     <h2>{t('contactHeading')}</h2>
+    <p>
+      <a href={`mailto:${t('contactEmail')}`}>{t('contactEmail')}</a>
+    </p>
+    <p>{t('contactPhone')}</p>
     <ContactForm />
   </section>
 );
