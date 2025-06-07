@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './App.module.css';
 
 interface ChatEntry {
   from: 'user' | 'bot';
@@ -50,10 +51,10 @@ const ChatBot: React.FC<Props> = ({ t }) => {
   };
 
   return (
-    <div className="chatbot">
-      <div className="messages">
+    <div className={styles.chatbot}>
+      <div className={styles.messages}>
         {messages.map((msg, idx) => (
-          <div key={idx} className={msg.from === 'bot' ? 'bot' : 'user'}>
+          <div key={idx} className={msg.from === 'bot' ? styles.bot : styles.user}>
             {msg.text}
           </div>
         ))}
@@ -66,6 +67,7 @@ const ChatBot: React.FC<Props> = ({ t }) => {
         }}
       >
         <input
+          className={styles.input}
           value={input}
           onChange={e => setInput(e.target.value)}
           placeholder={t('chat_placeholder')}
