@@ -52,7 +52,11 @@ const ProjectsSection: React.FC<ProjectsProps> = ({ t }) => (
         >
           <img src={project.image} alt={project.title} />
           <h3>{project.title}</h3>
-          <p className={styles.tech}>{project.tech.join(', ')}</p>
+          <div className={styles.tech}>
+            {project.tech.map(t => (
+              <span key={t} className={styles.badge}>{t}</span>
+            ))}
+          </div>
           <p className={styles.desc}>{project.description}</p>
         </a>
       ))}
